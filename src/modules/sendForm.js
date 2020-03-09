@@ -115,7 +115,7 @@ const postData = (formDataModal, formDataFooter, formData) => {
     headers: {
      'Content-Type': 'application/json'
     },
-    body: formDataModal, formDataFooter, formData
+    body: JSON.stringify(formDataModal, formDataFooter, formData)
   });
  };
 };
