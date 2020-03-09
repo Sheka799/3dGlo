@@ -11,12 +11,18 @@ const sendForm = () => {
   const statusMessage = document.createElement('div');
   statusMessage.style.cssText = 'font-size: 2rem';
  
-  const formPhone = document.querySelectorAll('.form-phone');
+  const formOne = document.getElementById('form1-phone');
+  const formTwo = document.getElementById('form2-phone');
+  const formThree = document.getElementById('form3-phone');
 
-  document.addEventListener('input', () => {
-    for (let i = 0; i < form.length; i++) {
-      formPhone[i].value = formPhone[i].value.replace (/[^\+\d]/g, '');
-    }    
+  form.addEventListener('input', () => {
+      formOne.value = formOne.value.replace (/[^\+\d]/g, '');
+    });
+  formFooter.addEventListener('input', () => {
+      formTwo.value = formTwo.value.replace (/[^\+\d]/g, '');
+    });
+  formModal.addEventListener('input', () => {
+      formThree.value = formThree.value.replace (/[^\+\d]/g, '');
     });
 
     const formName = document.querySelectorAll('.form-name');
@@ -53,7 +59,7 @@ const sendForm = () => {
   });
   });
 
-  //  //  Форма в Footer
+  //  Форма в Footer
    formFooter.addEventListener('submit', (event) => {
     event.preventDefault();  //  для того, чтобы страница не перезагружалась
     formFooter.appendChild(statusMessage);
