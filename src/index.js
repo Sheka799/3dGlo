@@ -18,7 +18,7 @@ import team from './modules/team';
 
 
 // Timer 
-coundTimer('10 march 2020');
+coundTimer('11 march 2020');
 
 // Main
 toggleMenu();

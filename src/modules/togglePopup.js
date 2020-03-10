@@ -7,20 +7,20 @@ const togglePopup = () => {
     popupBtn.forEach((elem) => {
       elem.addEventListener('click', () => {
         let width=document.body.clientWidth;
+        let top=document.body.clientTop;
         if(width > 768) {
         let count = 0;
         let timer = setInterval(function() {
           popup.style.display = 'block';
           popupContent.style.position = 'relative';
-          count++;
-          let position = popup.offsetWidth / 10;
+          count++; 
+          let position = 100;
           if(count <= position) {
-            popupContent.style.left = count * 4 + 'px';
+            popupContent.style.top = count + 'px';
           } else {
             clearInterval(timer);
           }
-          
-        }, 10);
+        }, 1);
       } else {
         popup.style.display = 'block';
       }
