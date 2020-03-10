@@ -33,6 +33,10 @@ const sendForm = () => {
       }
     });
 
+    const timerDelete = () => {
+      statusMessage.textContent = '';
+      statusMessage.textContent = '';
+    };
 
 
   // //  Форма в HEADER
@@ -54,12 +58,14 @@ const sendForm = () => {
       statusMessage.textContent = successMessage;
       statusMessage.style.cssText = 'color: white';
       form.reset();
+      setTimeout(timerDelete, 5000);
     })
     .catch((error) => {
       statusMessage.textContent = errorMessage;
       statusMessage.style.cssText = 'color: white';
       form.reset();
       console.error(error);
+      setTimeout(timerDelete, 5000);
   });
   });
 
@@ -82,12 +88,14 @@ const sendForm = () => {
       statusMessage.textContent = successMessage;
       statusMessage.style.cssText = 'color: white';
       formFooter.reset();
+      setTimeout(timerDelete, 5000);
     })
     .catch((error) => {
       statusMessage.textContent = errorMessage;
       statusMessage.style.cssText = 'color: white';
       formFooter.reset();
       console.error(error);
+      setTimeout(timerDelete, 5000);
   });
   });
 
@@ -111,12 +119,14 @@ const sendForm = () => {
       statusMessage.textContent = successMessage;
       statusMessage.style.cssText = 'color: white';
       formModal.reset();
+      setTimeout(timerDelete, 5000);
     })
     .catch((error) => {
       statusMessage.textContent = errorMessage;
       statusMessage.style.cssText = 'color: white';
       formModal.reset();
       console.error(error);
+      setTimeout(timerDelete, 5000);
   });
   
   
