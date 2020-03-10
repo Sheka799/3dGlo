@@ -41,8 +41,12 @@ const sendForm = () => {
     form.appendChild(statusMessage);
     statusMessage.textContent = loadMessage;
     const formData = new FormData(form);
+    let body = {};
+    formData.forEach((val, key) => {
+      body[key] = val;
+    });
   
-    postData(formData)
+    postData(body)
     .then((response) => {
       if (response.status !== 200) {
         throw new Error('status network not 200');
@@ -65,8 +69,12 @@ const sendForm = () => {
     formFooter.appendChild(statusMessage);
     statusMessage.textContent = loadMessage;
     const formDataFooter = new FormData(formFooter);
+    let body = {};
+    formDataFooter.forEach((val, key) => {
+      body[key] = val;
+    });
    
-    postData(formDataFooter)
+    postData(body)
     .then((response) => {
       if (response.status !== 200) {
         throw new Error('status network not 200');
@@ -90,8 +98,12 @@ const sendForm = () => {
     statusMessage.textContent = loadMessage;
     statusMessage.style.cssText = 'color: white';
     const formDataModal = new FormData(formModal);
+    let body = {};
+    formDataModal.forEach((val, key) => {
+      body[key] = val;
+    });
     
-    postData(formDataModal)
+    postData(body)
     .then((response) => {
       if (response.status !== 200) {
         throw new Error('status network not 200');
@@ -109,13 +121,13 @@ const sendForm = () => {
   
   
 });
-const postData = (formDataModal, formDataFooter, formData) => {
+const postData = (body) => {
   return fetch('./server.php', {
     method: 'POST',
     headers: {
      'Content-Type': 'application/json'
     },
-    body: JSON.stringify(formDataModal, formDataFooter, formData)
+    body: JSON.stringify(body)
   });
  };
 };
