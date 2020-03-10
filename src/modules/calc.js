@@ -29,23 +29,9 @@ const calc = (price = 100) => {
     
     let setValue = (total, value) => {
       if(total.textContent < value) {
-        let interval = setInterval(() => {
-        if (total.textContent*1 + 10 >= value) {
           total.textContent = value;
-          clearInterval(interval);
-        } else {
-          total.textContent = total.textContent*1 + 300;
-        }
-      }, 10);
     } else if (total.textContent > value) {
-      let interval = setInterval(() => {
-        if (total.textContent*1 - 10 <= value) {
           total.textContent = value;
-          clearInterval(interval);
-        } else {
-          total.textContent = total.textContent*1 - 300;
-        }
-      }, 10);
     }
   };
     setValue(totalValue, total);
